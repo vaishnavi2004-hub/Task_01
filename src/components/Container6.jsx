@@ -34,7 +34,7 @@ export default function Container6({ active }) {
       <h3 className="text-lg font-bold mb-2">Animated Slider</h3>
 
       <p
-        key={current} // ensures transition triggers on slide change
+        key={current} 
         className="text-center text-md transition-opacity duration-500 opacity-0 animate-fadeIn"
       >
         {slides[current]}

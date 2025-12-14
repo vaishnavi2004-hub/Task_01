@@ -10,33 +10,37 @@ export default function Container5({ active }) {
         bg-white
         rounded-xl shadow-md
         p-4
-        flex flex-col justify-center items-center gap-4
-        transform transition-transform duration-300
-        hover:scale-105 hover:shadow-lg
-        ${active ? "scale-105 shadow-xl" : "scale-100"}
+        flex flex-col items-center
+        transition-all duration-300
+        hover:-translate-y-1 hover:shadow-xl
+        ${active ? "ring-2 ring-black/20" : ""}
       `}
     >
-      <h3 className="text-lg font-semibold text-gray-800">
-        Action Buttons
-      </h3>
-
-      <div className="flex gap-4">
+      <div className="flex w-full gap-2 mb-4">
         <button
           onClick={() => setMessage("Button A clicked")}
-          className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
+          className="flex-1 px-3 py-2 bg-blue-600 text-white
+                     rounded-md hover:bg-blue-700 transition font-semibold"
         >
-          Button A
+          A
         </button>
 
         <button
           onClick={() => setMessage("Button B clicked")}
-          className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition"
+          className="flex-1 px-3 py-2 bg-green-600 text-white
+                     rounded-md hover:bg-green-700 transition font-semibold"
         >
-          Button B
+          B
         </button>
       </div>
 
-      {message && <p className="text-sm text-gray-600 mt-2">{message}</p>}
+      <div className="flex-1 flex items-center justify-center">
+        {message ? (
+          <p className="text-sm text-gray-700 font-medium">{message}</p>
+        ) : (
+          <p className="text-sm text-gray-400">Click a button</p>
+        )}
+      </div>
     </div>
   );
 }

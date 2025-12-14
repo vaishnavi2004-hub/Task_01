@@ -6,10 +6,7 @@ export default function Header({ toggleSidebar }) {
       flex items-center justify-between px-6">
 
       <h1 className="text-xl font-extrabold text-black">Responsive Dashboard</h1>
-
-
-      {/* Hamburger */}
-      <button
+  <button
   onClick={toggleSidebar}
   className="md:hidden text-2xl font-bold text-black"
 >
